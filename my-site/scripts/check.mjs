@@ -17,7 +17,7 @@ async function walk(dir) {
 }
 await walk(root);
 const sources=new Map();
-const allowed=new Set(['.html','.css','.js','.mjs','.json','.svg','.png','.webp','.woff2','.bin','.md','.txt','.py','.yml','.toml','.xml']);
+const allowed=new Set(['.html','.css','.js','.mjs','.json','.svg','.png','.webp','.json','.woff2','.bin','.md','.txt','.py','.yml','.toml','.xml']);
 for (const path of files) {
  const name=relative(root,path);
  if (['.gitignore','LICENSE'].includes(name)) continue;
