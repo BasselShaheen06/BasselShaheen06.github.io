@@ -1,0 +1,43 @@
+import { bindTranslations } from '../assets/language.js';
+
+bindTranslations([
+  { selector: '#profile', attribute: 'aria-label', ar: 'حول باسل' },
+  { selector: '#connect-title .profile-heading-label', ar: 'تواصل' },
+  { selector: '#background-title .profile-heading-label', ar: 'الخلفية' },
+  { selector: '#recognition-title .profile-heading-label', ar: 'أعمال مختارة' },
+  { selector: '.profile-name', ar: 'باسل' },
+  { selector: '.profile-role', ar: 'هندسة طبية حيوية · تصميم وبرمجة' },
+  { selector: '.profile-timezone', ar: 'القاهرة، مصر.<br>مفتوح للتعاون<br>والأسئلة الجيدة.' },
+  { selector: '.profile-year .profile-school-link', ar: 'كلية الهندسة الطبية الحيوية · القاهرة' },
+  { selector: '.profile-country', ar: 'القاهرة، مصر ' },
+  { selector: '#cairo-time', attribute: 'aria-label', ar: 'الوقت الحالي في القاهرة' },
+  { selector: '.profile-education p:nth-child(1)', ar: 'درجتك وجامعتك<span>ضع التفاصيل الحقيقية هنا.</span>' },
+  { selector: '.profile-education p:nth-child(2)', ar: 'مجال تركيزك<span>أضف مشروع التخرج أو الاهتمام البحثي.</span>' },
+  { selector: '.profile-link--github', ar: 'جيت هب' },
+  { selector: '.profile-link--linkedin', ar: 'لينكد إن' },
+  { selector: '.profile-link--email', ar: 'البريد' },
+  { selector: '.profile-link--cv', ar: 'السيرة' },
+  { selector: '#open-wechat, #wechat-title', ar: 'روابط أخرى' },
+  { selector: '.wechat-close', attribute: 'aria-label', ar: 'أغلق الروابط' },
+  { selector: '.wechat-handle', ar: 'هل تريد التواصل؟ ابدأ برسالة قصيرة.' },
+  { selector: '.profile-repositories li:nth-child(1) a', ar: 'جيت هب ↗' },
+  { selector: '.profile-repositories li:nth-child(2) a', ar: 'لينكد إن ↗' },
+  { selector: '.profile-repositories li:nth-child(3) a', ar: 'البريد ↗' },
+  { selector: '.profile-repositories li:nth-child(4) a', ar: 'السيرة ↗' },
+  { selector: '.profile-statements', attribute: 'aria-label', ar: 'حول باسل' },
+  { selector: '.profile-awards [data-project="meridian"] strong', ar: 'ميريديان' },
+  { selector: '.profile-awards [data-project="meridian"] span', ar: 'دراسة تنقل.' },
+  { selector: '.profile-awards [data-project="pulse"] strong', ar: 'نبض' },
+  { selector: '.profile-awards [data-project="pulse"] span', ar: 'دراسة إشارة.' },
+  { selector: '.profile-awards [data-project="atlas"] strong', ar: 'أطلس' },
+  { selector: '.profile-awards [data-project="atlas"] span', ar: 'نظام تحريري.' },
+  { selector: '.profile-awards [data-project="bearing"] strong', ar: 'اتجاه' },
+  { selector: '.profile-awards [data-project="bearing"] span', ar: 'أداة لإيجاد اتجاه.' },
+  { selector: '.profile-awards [data-project="more"] strong', ar: 'كل الأعمال' },
+]);
+
+export const arabicStatements = [
+  '<strong>هذه مساحة لسيرة قصيرة.</strong> استبدل هذا النص بالطريقة التي تريد أن تعرّف بها نفسك: ما تدرسه، وما تهتم به، وما تود أن تبنيه. اجعلها واضحة، وشخصية، وقابلة للتغيير.',
+  '<strong>ابدأ بالسؤال، ثم ارسم، ثم اختبر.</strong> هذا هو الإيقاع الذي يربط بين الهندسة والتصميم في هذا الموقع. استبدل التفاصيل بقصتك الحقيقية، واحتفظ بما يساعد القارئ على فهم الطريقة التي تفكر بها.',
+  '<strong>كل مشروع هنا بداية محادثة.</strong> أضف أعمالك الحقيقية، والصور التي تشرحها، والملاحظات التي لا تظهر في العرض النهائي. <strong>إلى أين تتجه بعد ذلك؟</strong>',
+];

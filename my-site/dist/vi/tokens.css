@@ -1,0 +1,185 @@
+/* Shared visual identity tokens.
+   Four themes share one semantic vocabulary. Page modules read the semantic
+   tokens; the legacy aliases keep older components on the same palette. */
+:root {
+  color-scheme: dark;
+
+  /* Type and interaction */
+  --vi-font-ui: "Bricolage Grotesque", "Alexandria", sans-serif;
+  --vi-font-ar: "Alexandria", "Bricolage Grotesque", sans-serif;
+  --vi-font-mono: var(--vi-font-ui);
+  --vi-icon-small: 20px;
+  --vi-icon-inline: 14px;
+  --vi-target: 44px;
+
+  /* Motion */
+  --vi-motion-exit: 220ms;
+  --vi-motion-enter: 620ms;
+  --vi-motion-exit-phone: 160ms;
+  --vi-motion-enter-phone: 320ms;
+  --vi-motion-ease: cubic-bezier(.22,1,.36,1);
+  --vi-motion-exit-ease: cubic-bezier(.65,0,.35,1);
+  --vi-motion-distance: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Nocturne — the default instrument at night.
+   -------------------------------------------------------------------------- */
+:root,
+[data-theme="nocturne"] {
+  color-scheme: dark;
+  --vi-hero-bg: #070707;
+  --vi-hero-ink: #f4f1e8;
+  --vi-hero-muted: #a49f92;
+  --vi-hero-line: #3a372f;
+  --vi-page-bg: #0d0d0d;
+  --vi-page-ink: #f1eee5;
+  --vi-page-muted: #9b968a;
+  --vi-page-line: #2b2a26;
+  --vi-profile-bg: #050505;
+  --vi-profile-ink: #f4f1e8;
+  --vi-profile-muted: #9b968a;
+  --vi-dialog-bg: #151515;
+  --vi-dialog-ink: #f4f1e8;
+  --vi-accent: #c9a45c;
+  --vi-accent-ink: #14110a;
+  --vi-focus: #e0b866;
+  --vi-compass-dial: #1a1813;
+  --vi-compass-brass: #c9a45c;
+  --vi-compass-needle: #c0492f;
+  --vi-compass-south: #f4f1e8;
+  --vi-compass-ink: #f4f1e8;
+  --vi-conversation: #1a1a1a;
+  --vi-shadow-soft: rgba(0,0,0,.32);
+  --vi-shadow-medium: rgba(0,0,0,.55);
+  --vi-shadow-clear: rgba(0,0,0,0);
+}
+
+/* --------------------------------------------------------------------------
+   Daylight — warm paper, dark ink, brass details.
+   -------------------------------------------------------------------------- */
+[data-theme="daylight"] {
+  color-scheme: light;
+  --vi-hero-bg: #f3efe4;
+  --vi-hero-ink: #14120e;
+  --vi-hero-muted: #6b6558;
+  --vi-hero-line: #c9c1b0;
+  --vi-page-bg: #fbf8f1;
+  --vi-page-ink: #16140f;
+  --vi-page-muted: #6a655a;
+  --vi-page-line: #d9d2c2;
+  --vi-profile-bg: #ebe5d7;
+  --vi-profile-ink: #16140f;
+  --vi-profile-muted: #6a655a;
+  --vi-dialog-bg: #fffdf8;
+  --vi-dialog-ink: #16140f;
+  --vi-accent: #a5762f;
+  --vi-accent-ink: #fffaf0;
+  --vi-focus: #2447d8;
+  --vi-compass-dial: #f7f1e3;
+  --vi-compass-brass: #a5762f;
+  --vi-compass-needle: #a63a28;
+  --vi-compass-south: #2a261f;
+  --vi-compass-ink: #16140f;
+  --vi-conversation: #f0ebdf;
+  --vi-shadow-soft: rgba(31,26,18,.10);
+  --vi-shadow-medium: rgba(31,26,18,.22);
+  --vi-shadow-clear: rgba(31,26,18,0);
+}
+
+/* --------------------------------------------------------------------------
+   Parchment — an old chart, ink and oxblood.
+   -------------------------------------------------------------------------- */
+[data-theme="parchment"] {
+  color-scheme: light;
+  --vi-hero-bg: #2a2118;
+  --vi-hero-ink: #f2e6cf;
+  --vi-hero-muted: #c2ae8c;
+  --vi-hero-line: #5a4935;
+  --vi-page-bg: #efe2c9;
+  --vi-page-ink: #2b2117;
+  --vi-page-muted: #7a674d;
+  --vi-page-line: #c9b48f;
+  --vi-profile-bg: #21180f;
+  --vi-profile-ink: #f2e6cf;
+  --vi-profile-muted: #c2ae8c;
+  --vi-dialog-bg: #f7ecd8;
+  --vi-dialog-ink: #2b2117;
+  --vi-accent: #a8462d;
+  --vi-accent-ink: #fdf3df;
+  --vi-focus: #a8462d;
+  --vi-compass-dial: #e6d3ae;
+  --vi-compass-brass: #a97c3f;
+  --vi-compass-needle: #a8462d;
+  --vi-compass-south: #f7ecd8;
+  --vi-compass-ink: #2b2117;
+  --vi-conversation: #e3d0ab;
+  --vi-shadow-soft: rgba(42,33,24,.16);
+  --vi-shadow-medium: rgba(42,33,24,.30);
+  --vi-shadow-clear: rgba(42,33,24,0);
+}
+
+/* --------------------------------------------------------------------------
+   Instrument — a cold navigation console.
+   -------------------------------------------------------------------------- */
+[data-theme="instrument"] {
+  color-scheme: dark;
+  --vi-hero-bg: #08131c;
+  --vi-hero-ink: #e8f2f5;
+  --vi-hero-muted: #93aab5;
+  --vi-hero-line: #243a46;
+  --vi-page-bg: #0b1720;
+  --vi-page-ink: #e6f1f4;
+  --vi-page-muted: #8fa6b0;
+  --vi-page-line: #223640;
+  --vi-profile-bg: #061017;
+  --vi-profile-ink: #e6f1f4;
+  --vi-profile-muted: #8fa6b0;
+  --vi-dialog-bg: #0f2029;
+  --vi-dialog-ink: #e6f1f4;
+  --vi-accent: #f0a23a;
+  --vi-accent-ink: #101820;
+  --vi-focus: #5cc8e8;
+  --vi-compass-dial: #0f2029;
+  --vi-compass-brass: #9fb6bf;
+  --vi-compass-needle: #f0a23a;
+  --vi-compass-south: #e6f1f4;
+  --vi-compass-ink: #e6f1f4;
+  --vi-conversation: #122630;
+  --vi-shadow-soft: rgba(0,0,0,.34);
+  --vi-shadow-medium: rgba(0,0,0,.58);
+  --vi-shadow-clear: rgba(0,0,0,0);
+}
+
+/* --------------------------------------------------------------------------
+   Legacy aliases. Existing modules can migrate gradually without a hard fork.
+   -------------------------------------------------------------------------- */
+:root {
+  --vi-canvas: var(--vi-page-bg);
+  --vi-surface: var(--vi-page-bg);
+  --vi-ink: var(--vi-page-ink);
+  --vi-muted: var(--vi-page-muted);
+  --vi-text-secondary: var(--vi-page-muted);
+  --vi-line: var(--vi-page-line);
+  --vi-action: var(--vi-accent);
+  --vi-action-hover: color-mix(in srgb, var(--vi-accent) 78%, var(--vi-page-ink));
+  --vi-processing: var(--vi-accent);
+  --vi-dialog: var(--vi-dialog-bg);
+  --vi-danger: var(--vi-compass-needle);
+  --vi-error: var(--vi-compass-needle);
+  --vi-warning: var(--vi-page-muted);
+  --vi-folder-back: color-mix(in srgb, var(--vi-page-bg) 88%, var(--vi-page-ink));
+  --vi-folder-front: var(--vi-page-bg);
+  --vi-folder-transition: color-mix(in srgb, var(--vi-page-bg) 94%, var(--vi-page-ink));
+  --vi-folder-paper-back: color-mix(in srgb, var(--vi-page-bg) 96%, var(--vi-page-ink));
+  --vi-folder-paper-mid: color-mix(in srgb, var(--vi-page-bg) 98%, var(--vi-page-ink));
+  --vi-site-background: var(--vi-hero-bg);
+  --vi-inverse-text: var(--vi-hero-ink);
+  --vi-inverse-secondary: var(--vi-hero-muted);
+  --vi-inverse-muted: color-mix(in srgb, var(--vi-hero-muted) 82%, var(--vi-hero-ink));
+  --vi-inverse-line: var(--vi-hero-line);
+  --vi-canvas-clear: color-mix(in srgb, var(--vi-page-bg) 0%, transparent);
+  --vi-overlay: color-mix(in srgb, var(--vi-dialog-bg) 96%, transparent);
+  --vi-backdrop: color-mix(in srgb, var(--vi-page-ink) 62%, transparent);
+  --vi-shadow: 0 20px 60px color-mix(in srgb, var(--vi-page-ink) 8%, transparent);
+}

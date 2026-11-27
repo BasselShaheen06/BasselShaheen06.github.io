@@ -1,0 +1,178 @@
+/* Compass-dial iris between Selected work and Journey.
+   The stage overlaps the last work viewport and stays pinned while the dial
+   closes, turns, and opens onto the profile surface. */
+html { overflow-anchor: none; }
+
+.is-iris .device-story {
+  position: relative;
+  z-index: 4;
+  height: 360dvh;
+  margin-top: -100dvh;
+  pointer-events: none;
+}
+.device-story .story-stage {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: clip;
+  background: transparent;
+}
+
+.device-story .iris-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--vi-page-ink) 7%, transparent), transparent 62%),
+    var(--vi-surface);
+  opacity: var(--iris-close, 0);
+}
+
+.device-story .iris-destination {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  overflow: clip;
+  background:
+    radial-gradient(circle at 50% 46%, color-mix(in srgb, var(--vi-accent) 8%, transparent), transparent 58%),
+    var(--vi-profile-bg);
+  color: var(--vi-profile-ink);
+  opacity: var(--iris-destination-opacity, 0);
+  clip-path: circle(calc(var(--iris-open, 0) * 76vmax) at 50% 50%);
+  transform: scale(var(--iris-destination-scale, 1));
+  transform-origin: 50% 50%;
+}
+.iris-destination-copy {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  width: min(680px, calc(100vw - 48px));
+  padding: 24px;
+  text-align: center;
+}
+.iris-bearing {
+  color: var(--vi-accent);
+  font: 400 clamp(42px, 7vw, 96px)/.9 var(--vi-font-ui);
+  letter-spacing: -.04em;
+}
+.iris-kicker {
+  color: var(--vi-profile-muted);
+  font: 500 10px/1.4 var(--vi-font-ui);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.iris-title {
+  font: 500 clamp(42px, 7.5vw, 104px)/.96 var(--vi-font-ui);
+  letter-spacing: -.05em;
+}
+.iris-caption {
+  max-width: 46ch;
+  margin-top: 6px;
+  color: var(--vi-profile-muted);
+  font: 400 clamp(13px, 1.2vw, 16px)/1.6 var(--vi-font-ui);
+  text-wrap: pretty;
+}
+
+.device-story .iris-dial {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: min(78vmin, 680px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%) rotate(var(--iris-turn, 0deg)) scale(var(--iris-dial-scale, 1));
+  opacity: var(--iris-dial-opacity, 0);
+  color: var(--vi-compass-brass);
+}
+.iris-dial-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 0deg, var(--vi-compass-brass) 0 .42deg, transparent .42deg 6deg);
+  -webkit-mask: radial-gradient(circle, transparent 0 37%, #000 37.4% 63%, transparent 63.4% 100%);
+  mask: radial-gradient(circle, transparent 0 37%, #000 37.4% 63%, transparent 63.4% 100%);
+}
+.iris-dial::before,
+.iris-dial::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--vi-compass-brass) 46%, transparent);
+}
+.iris-dial::before { inset: 7%; }
+.iris-dial::after { inset: 21%; border-color: color-mix(in srgb, var(--vi-compass-brass) 24%, transparent); }
+.iris-cardinal {
+  position: absolute;
+  color: var(--vi-compass-brass);
+  font: 500 clamp(9px, 1.15vmin, 13px)/1 var(--vi-font-ui);
+  letter-spacing: .16em;
+  opacity: .9;
+}
+.iris-cardinal--n { left: 50%; top: 10%; transform: translateX(-50%); }
+.iris-cardinal--e { right: 10%; top: 50%; transform: translateY(-50%); }
+.iris-cardinal--s { left: 50%; bottom: 10%; transform: translateX(-50%); }
+.iris-cardinal--w { left: 10%; top: 50%; transform: translateY(-50%); }
+.iris-needle {
+  position: absolute;
+  left: 50%;
+  top: 16%;
+  width: 8%;
+  height: 34%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, var(--vi-compass-needle) 0 50%, var(--vi-compass-south) 50% 100%);
+  clip-path: polygon(50% 0, 100% 100%, 50% 88%, 0 100%);
+}
+.iris-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(9px, 1.4vmin, 16px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--vi-compass-brass);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--vi-compass-dial) 82%, transparent);
+}
+
+.device-story .iris-hud {
+  position: absolute;
+  left: clamp(24px, 4vw, 64px);
+  bottom: clamp(24px, 5vh, 56px);
+  z-index: 4;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--vi-page-ink);
+  opacity: var(--iris-hud-opacity, 0);
+}
+.iris-hud-bearing {
+  color: var(--vi-accent);
+  font: 400 clamp(24px, 3vw, 38px)/1 var(--vi-font-ui);
+}
+.iris-hud-label {
+  font: 500 10px/1.4 var(--vi-font-ui);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.is-iris .transition-profile {
+  margin-top: -100dvh;
+  z-index: 5;
+  visibility: hidden;
+}
+.is-iris .transition-profile[data-active] { visibility: visible; }
+.is-iris[data-iris-terminal] .device-story .story-stage { visibility: hidden; }
+
+@media (max-width: 700px) and (max-aspect-ratio: 3/4),
+       (max-height: 500px) and (min-aspect-ratio: 4/3) and (pointer: coarse) {
+  .is-iris .device-story { height: 300dvh; }
+  .device-story .iris-dial { width: 88vmin; }
+  .device-story .iris-hud { left: 24px; bottom: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .device-story { display: none; }
+}

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "meridian",
+    "group": "code",
+    "cover": "/media/bassel-01.svg",
+    "width": 1620,
+    "height": 971,
+    "monochrome": false,
+    "carouselFit": "cover",
+    "en": {
+      "title": "Meridian",
+      "category": "NAVIGATION STUDY",
+      "year": "2026",
+      "summary": "A placeholder case study for a navigation interface.",
+      "description": [
+        "This is a placeholder project. Replace this paragraph with the real problem, the constraints and the decisions that shaped the work.",
+        "Use the next paragraph for the process, the build and the outcome. The layout is ready for a proper case study."
+      ],
+      "facts": [["Role", "Placeholder"], ["Focus", "Interface systems"], ["Status", "Case study draft"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Meridian%20case%20study", "label": "Request the case study"}]
+    },
+    "ar": {
+      "title": "ميريديان",
+      "category": "دراسة تنقل",
+      "year": "٢٠٢٦",
+      "summary": "دراسة حالة مؤقتة لواجهة تنقل.",
+      "description": [
+        "هذا مشروع مؤقت. استبدل هذه الفقرة بالمشكلة الحقيقية والقيود والقرارات التي شكّلت العمل.",
+        "استخدم الفقرة التالية للحديث عن العملية والتنفيذ والنتيجة. التخطيط جاهز لدراسة حالة كاملة."
+      ],
+      "facts": [["الدور", "مؤقت"], ["التركيز", "أنظمة الواجهات"], ["الحالة", "مسودة دراسة"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Meridian%20case%20study", "label": "اطلب دراسة الحالة"}]
+    }
+  },
+  {
+    "id": "pulse",
+    "group": "code",
+    "cover": "/media/bassel-02.svg",
+    "width": 1620,
+    "height": 971,
+    "monochrome": false,
+    "carouselFit": "cover",
+    "en": {
+      "title": "Pulse",
+      "category": "SIGNAL STUDY",
+      "year": "2026",
+      "summary": "A placeholder study of rhythm, signal and response.",
+      "description": [
+        "This is a placeholder project. Describe the signal you wanted to make legible and the people it was for.",
+        "Add the prototype, the tests and what changed after the first round of feedback."
+      ],
+      "facts": [["Role", "Placeholder"], ["Focus", "Signal and feedback"], ["Status", "Case study draft"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Pulse%20case%20study", "label": "Request the case study"}]
+    },
+    "ar": {
+      "title": "نبض",
+      "category": "دراسة إشارة",
+      "year": "٢٠٢٦",
+      "summary": "دراسة مؤقتة للإيقاع والإشارة والاستجابة.",
+      "description": [
+        "هذا مشروع مؤقت. صف الإشارة التي أردت جعلها واضحة والأشخاص الذين صُممت لهم.",
+        "أضف النموذج الأولي والاختبارات وما تغيّر بعد الجولة الأولى من الملاحظات."
+      ],
+      "facts": [["الدور", "مؤقت"], ["التركيز", "الإشارة والاستجابة"], ["الحالة", "مسودة دراسة"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Pulse%20case%20study", "label": "اطلب دراسة الحالة"}]
+    }
+  },
+  {
+    "id": "atlas",
+    "group": "design",
+    "cover": "/media/bassel-03.svg",
+    "width": 1620,
+    "height": 971,
+    "monochrome": false,
+    "carouselFit": "cover",
+    "en": {
+      "title": "Atlas",
+      "category": "CARTOGRAPHY",
+      "year": "2025",
+      "summary": "A placeholder editorial system for maps and memory.",
+      "description": [
+        "This is a placeholder project. Replace this copy with the editorial idea, the material and the audience.",
+        "The layout can hold a process note, a short outcome and a set of images. Add the real details when they are ready."
+      ],
+      "facts": [["Role", "Placeholder"], ["Focus", "Editorial systems"], ["Status", "Case study draft"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Atlas%20case%20study", "label": "Request the case study"}]
+    },
+    "ar": {
+      "title": "أطلس",
+      "category": "رسم الخرائط",
+      "year": "٢٠٢٥",
+      "summary": "نظام تحريري مؤقت للخرائط والذاكرة.",
+      "description": [
+        "هذا مشروع مؤقت. استبدل هذا النص بالفكرة التحريرية والمادة والجمهور.",
+        "يمكن للتخطيط أن يستوعب ملاحظة عن العملية ونتيجة قصيرة ومجموعة صور. أضف التفاصيل الحقيقية عندما تكون جاهزة."
+      ],
+      "facts": [["الدور", "مؤقت"], ["التركيز", "الأنظمة التحريرية"], ["الحالة", "مسودة دراسة"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Atlas%20case%20study", "label": "اطلب دراسة الحالة"}]
+    }
+  },
+  {
+    "id": "bearing",
+    "group": "design",
+    "cover": "/media/bassel-04.svg",
+    "width": 1620,
+    "height": 971,
+    "monochrome": false,
+    "carouselFit": "cover",
+    "en": {
+      "title": "Bearing",
+      "category": "INSTRUMENT",
+      "year": "2025",
+      "summary": "A placeholder instrument for finding a direction.",
+      "description": [
+        "This is a placeholder project. Use this space for the question that started the work and the first sketch.",
+        "Then describe the instrument, the interaction and the moment it became useful."
+      ],
+      "facts": [["Role", "Placeholder"], ["Focus", "Tools and orientation"], ["Status", "Case study draft"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Bearing%20case%20study", "label": "Request the case study"}]
+    },
+    "ar": {
+      "title": "اتجاه",
+      "category": "أداة",
+      "year": "٢٠٢٥",
+      "summary": "أداة مؤقتة لإيجاد اتجاه.",
+      "description": [
+        "هذا مشروع مؤقت. استخدم هذه المساحة للسؤال الذي بدأ العمل والرسم الأول.",
+        "ثم صف الأداة والتفاعل واللحظة التي أصبحت فيها مفيدة."
+      ],
+      "facts": [["الدور", "مؤقت"], ["التركيز", "الأدوات والتوجيه"], ["الحالة", "مسودة دراسة"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Bearing%20case%20study", "label": "اطلب دراسة الحالة"}]
+    }
+  },
+  {
+    "id": "north",
+    "group": "practice",
+    "cover": "/media/bassel-05.svg",
+    "width": 1620,
+    "height": 971,
+    "monochrome": false,
+    "carouselFit": "cover",
+    "en": {
+      "title": "North",
+      "category": "ORIENTATION",
+      "year": "2024",
+      "summary": "A placeholder field study about orientation.",
+      "description": [
+        "This is a placeholder project. Replace this copy with a question, a place or a set of observations.",
+        "The case study can be short. Keep the evidence, the images and the one idea that matters."
+      ],
+      "facts": [["Role", "Placeholder"], ["Focus", "Field research"], ["Status", "Case study draft"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=North%20case%20study", "label": "Request the case study"}]
+    },
+    "ar": {
+      "title": "شمال",
+      "category": "توجيه",
+      "year": "٢٠٢٤",
+      "summary": "دراسة ميدانية مؤقتة عن التوجيه.",
+      "description": [
+        "هذا مشروع مؤقت. استبدل هذا النص بسؤال أو مكان أو مجموعة ملاحظات.",
+        "يمكن أن تكون دراسة الحالة قصيرة. احتفظ بالأدلة والصور والفكرة الواحدة المهمة."
+      ],
+      "facts": [["الدور", "مؤقت"], ["التركيز", "البحث الميداني"], ["الحالة", "مسودة دراسة"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=North%20case%20study", "label": "اطلب دراسة الحالة"}]
+    }
+  },
+  {
+    "id": "field-notes",
+    "group": "practice",
+    "cover": "/media/bassel-06.svg",
+    "width": 1620,
+    "height": 971,
+    "monochrome": false,
+    "carouselFit": "cover",
+    "en": {
+      "title": "Field Notes",
+      "category": "OBSERVATION",
+      "year": "2024",
+      "summary": "A placeholder collection of notes from the edge of a project.",
+      "description": [
+        "This is a placeholder project. Use it for the fragments that do not fit in a formal case study.",
+        "Add sketches, quotations, small tests and the notes that helped the next project begin."
+      ],
+      "facts": [["Role", "Placeholder"], ["Focus", "Notes and fragments"], ["Status", "Case study draft"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Field%20Notes%20case%20study", "label": "Request the case study"}]
+    },
+    "ar": {
+      "title": "ملاحظات ميدانية",
+      "category": "مراقبة",
+      "year": "٢٠٢٤",
+      "summary": "مجموعة مؤقتة من الملاحظات من حافة مشروع.",
+      "description": [
+        "هذا مشروع مؤقت. استخدمه للشظايا التي لا تناسب دراسة حالة رسمية.",
+        "أضف الرسومات والاقتباسات والاختبارات الصغيرة والملاحظات التي ساعدت المشروع التالي على البدء."
+      ],
+      "facts": [["الدور", "مؤقت"], ["التركيز", "ملاحظات وشظايا"], ["الحالة", "مسودة دراسة"]],
+      "resources": [{"href": "mailto:hello@example.com?subject=Field%20Notes%20case%20study", "label": "اطلب دراسة الحالة"}]
+    }
+  }
+]

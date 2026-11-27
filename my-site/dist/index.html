@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/vi/tokens.css"><link rel="stylesheet" href="/vi/icons.css"><link rel="stylesheet" href="/vi/base.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    html{background:var(--vi-site-background)}#home-loader{display:none}
+    html[data-intro] #home-loader{display:block;position:fixed;inset:0;z-index:100;background:var(--vi-site-background);color:var(--vi-surface)}
+    html[data-intro="loading"] main,html[data-intro="error"] main{visibility:hidden}
+    html[data-intro] .journey-skip{visibility:hidden}
+    html[data-entry="fields"],html[data-entry="fields"] body,
+    html[data-fields-restore],html[data-fields-restore] body{background:var(--vi-surface)}
+    html[data-entry="fields"] .journey-track{background:var(--vi-surface)}
+    html[data-entry="fields"] .homepage{visibility:hidden!important}
+    html[data-entry="fields"] main{opacity:0;pointer-events:none}
+    .loader-number{position:absolute;left:27.3%;top:5.5%;transform:translateX(-50%);font:400 clamp(90px,13.2vw,210px)/1 var(--vi-font-ui);letter-spacing:-.065em;font-variant-numeric:tabular-nums}
+    .loader-error{position:absolute;left:8%;bottom:8%;font:13px/1.6 var(--vi-font-ui)}
+    .loader-error[hidden]{display:none}
+  </style>
+  <script src="/assets/boot.js"></script>
+  <meta name="theme-color" content="#070707">
+  <meta name="description" content="The portfolio of Bassel: selected work, experiments and notes at the meeting point of engineering and design.">
+  <title>Bassel — Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon-compass.svg">
+  <link rel="stylesheet" href="/home/style.css"><link rel="stylesheet" href="/assets/journey.css"><link rel="stylesheet" href="/fields/fields.css"><link rel="stylesheet" href="/assets/catalog/vendor/lenis.css"><link rel="stylesheet" href="/profile/profile.css">
+  <link rel="stylesheet" href="/home/intro.css">
+  <link rel="stylesheet" href="/transition/integrated.css">
+  <link rel="stylesheet" href="/vi/theme.css">
+  <link rel="stylesheet" href="/assets/site-nav.css">
+  <script type="module" src="/project/entry.js"></script>
+  <script type="module" src="/vi/theme.js"></script>
+  <script type="module" src="/home/intro.js"></script><script type="module" src="/profile/profile.js"></script>
+  <script type="module" src="/assets/site-nav.js"></script>
+  <script type="module" src="/vi/page-motion.js"></script>
+  <link rel="canonical" href="https://example.com/" data-site-root="https://example.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Bassel">
+  <meta property="og:site_name" content="Bassel">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bassel — Portfolio">
+  <meta property="og:description" content="Selected work, experiments and notes at the meeting point of engineering and design.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/media/bassel-01.svg">
+  <meta property="og:image:alt" content="Brass compass cover for Bassel's portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_EG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bassel — Portfolio">
+  <meta name="twitter:description" content="Selected work, experiments and notes at the meeting point of engineering and design.">
+  <meta name="twitter:image" content="https://example.com/media/bassel-01.svg">
+  <meta name="twitter:image:alt" content="Bassel portfolio compass">
+</head>
+<body>
+  <div itemscope itemtype="https://schema.org/WebSite">
+    <meta itemprop="name" content="Bassel">
+    <meta itemprop="alternateName" content="Bassel portfolio">
+    <link itemprop="url" href="https://example.com/">
+  </div>
+  <div id="home-loader" role="progressbar" aria-label="Loading homepage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="loader-number" aria-hidden="true">00</span>
+    <div class="loader-error" role="alert" hidden><p>Unable to finish loading. Please try again.</p><button type="button">Retry</button></div>
+  </div>
+  <a class="journey-skip" href="#fields">Skip to selected work</a>
+  <nav class="site-nav" data-site-nav aria-label="Portfolio sections">
+    <span class="site-nav__guide" aria-hidden="true">
+      <svg viewBox="0 0 24 24" focusable="false">
+        <circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width=".9" opacity=".55"/>
+        <circle cx="12" cy="12" r="6.4" fill="none" stroke="currentColor" stroke-width=".6" opacity=".25"/>
+        <path class="site-nav__needle" d="M12 3.8 14.8 12 12 10.9 9.2 12Z" fill="currentColor"/>
+        <circle cx="12" cy="12" r="1.1" fill="currentColor"/>
+      </svg>
+    </span>
+    <a href="#home" data-bearing="origin" aria-label="Origin — home"><span class="site-nav__letter">N</span><span class="site-nav__label">Origin</span></a>
+    <a href="#fields" data-bearing="work" aria-label="Work — selected work"><span class="site-nav__letter">E</span><span class="site-nav__label">Work</span></a>
+    <a href="#profile" data-bearing="journey" aria-label="Journey — about Bassel"><span class="site-nav__letter">S</span><span class="site-nav__label">Journey</span></a>
+    <a href="#connect" data-bearing="contact" aria-label="Contact — get in touch"><span class="site-nav__letter">W</span><span class="site-nav__label">Contact</span></a>
+  </nav>
+  <main>
+  <div id="journey">
+    <div class="journey-viewport">
+      <div class="journey-track">
+        <section class="homepage" aria-label="Bassel portfolio">
+          <div id="stage" aria-label="A slowly rotating brass compass, drawn as a point cloud">
+            <canvas id="cloud" role="img" aria-label="Brass compass point cloud. Nearby points scatter only while the pointer moves, then return when it stops."></canvas>
+            <p id="status" role="status">Loading…</p>
+          </div>
+          <div id="greeting" class="greeting" data-language="en">
+            <h1 id="heading"><span class="hello">Hello,</span><span class="name">I'm Bassel</span></h1>
+          </div>
+          <nav class="languages" aria-label="Language"><button id="lang-en" type="button" lang="en" aria-label="English" aria-pressed="true">EN</button><span class="language-divider" aria-hidden="true"></span><button id="lang-ar" type="button" lang="ar" aria-label="العربية" aria-pressed="false">ع</button></nav>
+          <p class="enter-fields"><span id="explore-label">SCROLL TO EXPLORE</span></p>
+        </section>
+        <section id="fields" class="fields selected-work" lang="en" aria-labelledby="fields-title" inert>
+          <div class="fields-layout">
+          <header class="fields-header"><h2 id="fields-title" aria-label="Form follows the question."><span class="fields-prompt-line" aria-hidden="true">Form follows</span><span class="fields-prompt-line" aria-hidden="true">the question.</span></h2></header>
+          <p class="selected-work-label">Selected work</p>
+          <nav class="field-grid" aria-label="Selected work">
+            <a class="field" data-work="meridian" href="/project/about/?project=meridian" aria-label="Meridian — View project">
+              <span class="field-number" aria-hidden="true">01</span>
+              <div class="field-content"><h3 class="field-title">Meridian</h3><p class="field-description"><span class="field-copy-line">A navigation study for</span><span class="field-copy-line">moving through a city.</span></p></div>
+              <div class="field-image"><img src="/media/bassel-01.svg" alt="" width="240" height="144" decoding="async"></div>
+            </a>
+            <a class="field" data-work="pulse" href="/project/about/?project=pulse" aria-label="Pulse — View project">
+              <span class="field-number" aria-hidden="true">02</span>
+              <div class="field-content"><h3 class="field-title">Pulse</h3><p class="field-description"><span class="field-copy-line">A signal study of rhythm</span><span class="field-copy-line">and response.</span></p></div>
+              <div class="field-image"><img src="/media/bassel-02.svg" alt="" width="240" height="144" decoding="async"></div>
+            </a>
+            <a class="field" data-work="atlas" href="/project/about/?project=atlas" aria-label="Atlas — View project">
+              <span class="field-number" aria-hidden="true">03</span>
+              <div class="field-content"><h3 class="field-title">Atlas</h3><p class="field-description"><span class="field-copy-line">An editorial system for</span><span class="field-copy-line">maps and memory.</span></p></div>
+              <div class="field-image"><img src="/media/bassel-03.svg" alt="" width="240" height="144" decoding="async"></div>
+            </a>
+            <a class="field" data-work="bearing" href="/project/about/?project=bearing" aria-label="Bearing — View project">
+              <span class="field-number" aria-hidden="true">04</span>
+              <div class="field-content"><h3 class="field-title">Bearing</h3><p class="field-description"><span class="field-copy-line">An instrument for finding</span><span class="field-copy-line">a direction.</span></p></div>
+              <div class="field-image"><img src="/media/bassel-04.svg" alt="" width="240" height="144" decoding="async"></div>
+            </a>
+          </nav>
+          <a class="all-work" href="/project/" aria-label="All work"><span class="all-work-label">All work</span><span class="vi-icon" data-icon="arrow-up-right" aria-hidden="true"></span></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <section id="device-story" class="device-story" aria-label="Journey to About" hidden>
+    <div class="story-stage">
+      <div class="iris-cover" aria-hidden="true"></div>
+      <div class="iris-destination" aria-hidden="true">
+        <div class="iris-destination-copy">
+          <span class="iris-bearing">S</span>
+          <span class="iris-kicker">BEARING</span>
+          <strong class="iris-title">Journey</strong>
+          <span class="iris-caption">A short record of where I have been, what I am learning, and where I am going next.</span>
+        </div>
+      </div>
+      <div class="iris-dial" aria-hidden="true">
+        <span class="iris-cardinal iris-cardinal--n">N</span>
+        <span class="iris-cardinal iris-cardinal--e">E</span>
+        <span class="iris-cardinal iris-cardinal--s">S</span>
+        <span class="iris-cardinal iris-cardinal--w">W</span>
+        <span class="iris-needle"></span>
+        <span class="iris-hub"></span>
+      </div>
+      <div class="iris-hud" aria-hidden="true"><span class="iris-hud-bearing">S</span><span class="iris-hud-label">JOURNEY</span></div>
+    </div>
+  </section>
+  <section id="profile" class="profile-scene" aria-label="About Bassel" tabindex="-1">
+    <div class="profile-stage">
+      <div class="profile-opening" aria-hidden="true"></div>
+      <div class="profile-dots" aria-hidden="true"><i class="profile-dot"></i><i class="profile-dot"></i><i class="profile-dot"></i></div>
+      <div class="profile-columns">
+        <section id="connect" class="profile-column profile-column--connect" aria-labelledby="connect-title" tabindex="-1">
+          <h2 class="profile-heading" id="connect-title"><span class="profile-heading-label">CONNECT</span></h2>
+          <div class="profile-details">
+            <ul class="profile-links">
+              <li><a class="profile-link profile-link--github" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a class="profile-link profile-link--linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a class="profile-link profile-link--email" href="mailto:hello@example.com">Email</a></li>
+              <li><a class="profile-link profile-link--cv" href="mailto:hello@example.com?subject=CV">CV</a></li>
+              <li><button id="open-wechat" type="button" aria-haspopup="dialog" aria-controls="wechat-dialog">Other links</button></li>
+            </ul>
+            <p class="profile-timezone">Cairo, Egypt.<br>Open to collaboration<br>and good questions.</p>
+          </div>
+        </section>
+        <section class="profile-column profile-column--background" aria-labelledby="background-title">
+          <h2 class="profile-heading" id="background-title"><span class="profile-heading-label">BACKGROUND</span></h2>
+          <div class="profile-details">
+            <p class="profile-name">Bassel</p>
+            <p class="profile-role">Biomedical engineering · design &amp; code</p>
+            <p class="profile-year"><span class="profile-school-link">SBME · Cairo</span></p>
+            <p class="profile-location"><span class="profile-country">Cairo, Egypt </span><time id="cairo-time" class="profile-clock" aria-label="Current time in Cairo">--:--:--</time></p>
+            <div class="profile-education">
+              <p>Your degree and university<span>Replace with the real details.</span></p>
+              <p>Your focus or thesis<span>Add the research question or graduation project.</span></p>
+            </div>
+          </div>
+        </section>
+        <section class="profile-column profile-column--recognition" aria-labelledby="recognition-title">
+          <h2 class="profile-heading" id="recognition-title"><span class="profile-heading-label">SELECTED WORK</span></h2>
+          <div class="profile-details">
+            <ul class="profile-awards">
+              <li data-project="meridian"><a href="/project/about/?project=meridian"><strong>Meridian</strong><span>A navigation study.</span></a></li>
+              <li data-project="pulse"><a href="/project/about/?project=pulse"><strong>Pulse</strong><span>A signal study.</span></a></li>
+              <li data-project="atlas"><a href="/project/about/?project=atlas"><strong>Atlas</strong><span>An editorial system.</span></a></li>
+              <li data-project="bearing"><a href="/project/about/?project=bearing"><strong>Bearing</strong><span>An instrument for direction.</span></a></li>
+              <li data-project="more"><a href="/project/"><strong>All work</strong></a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="profile-statements" aria-label="About Bassel">
+        <p class="profile-statement"><strong>This is a space for a short biography.</strong> Replace this text with the way you want to introduce yourself: what you study, what you care about, and what you want to build. Keep it clear, personal, and easy to change.</p>
+        <p class="profile-statement"><strong>Start with a question, then draw, then test.</strong> That is the rhythm that connects engineering and design on this site. Replace the details with your own story, and keep what helps a reader understand how you think.</p>
+        <p class="profile-statement"><strong>Every project here is the beginning of a conversation.</strong> Add your real work, the images that explain it, and the notes that do not make it into the final presentation. <strong>Where&nbsp;do&nbsp;you&nbsp;go&nbsp;next?</strong></p>
+      </div>
+    </div>
+  </section>
+  </main>
+  <dialog class="wechat-dialog" id="wechat-dialog" aria-labelledby="wechat-title" data-lenis-prevent>
+    <div class="wechat-dialog-header"><h2 id="wechat-title">Other links</h2><button class="wechat-close vi-icon-control" type="button" aria-label="Close other links" autofocus><span class="vi-icon" data-icon="close" aria-hidden="true"></span></button></div>
+    <ul class="profile-repositories"><li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li><li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li><li><a href="mailto:hello@example.com">Email ↗</a></li><li><a href="mailto:hello@example.com?subject=CV">CV ↗</a></li></ul>
+    <p class="wechat-handle">Want to talk? Start with a short message.</p>
+  </dialog>
+  <noscript><p>Browse the <a href="/project/">project index</a> or <a href="mailto:hello@example.com">send an email</a>.</p></noscript>
+</body>
+</html>

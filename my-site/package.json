@@ -1,0 +1,19 @@
+{
+  "name": "bassel-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bassel's interactive portfolio: a brass compass, four themes, and English / Arabic case studies.",
+  "homepage": "https://example.com/",
+  "keywords": ["portfolio", "compass", "threejs", "webgl", "arabic", "bilingual"],
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/check.mjs && node scripts/build-demo.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "release:ready": "node scripts/check.mjs && node --test scripts/*.test.mjs && node scripts/release-ready.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

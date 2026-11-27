@@ -1,0 +1,111 @@
+/* Appearance control. Injected by /vi/theme.js so every page shares one menu. */
+.theme-control {
+  position: fixed;
+  z-index: 210;
+  top: 16px;
+  right: 16px;
+  color: var(--vi-hero-ink);
+  font-family: var(--vi-font-ui);
+}
+
+html[data-intro] .theme-control {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body[data-view] .theme-control { color: var(--vi-page-ink); }
+
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: inherit;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+  background: color-mix(in srgb, var(--vi-hero-bg) 62%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background .25s var(--vi-motion-ease), border-color .25s var(--vi-motion-ease);
+}
+body[data-view] .theme-toggle { background: color-mix(in srgb, var(--vi-page-bg) 72%, transparent); }
+.theme-toggle:hover { border-color: color-mix(in srgb, currentColor 42%, transparent); }
+.theme-toggle svg { width: 22px; height: 22px; display: block; transition: transform .5s var(--vi-motion-ease); }
+.theme-toggle:hover svg { transform: rotate(28deg); }
+.theme-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.theme-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 196px;
+  padding: 8px;
+  border: 1px solid var(--vi-line);
+  background: var(--vi-dialog);
+  color: var(--vi-dialog-ink);
+  box-shadow: var(--vi-shadow);
+  border-radius: 2px;
+}
+.theme-menu[hidden] { display: none; }
+.theme-menu-title {
+  margin: 4px 10px 8px;
+  color: var(--vi-text-secondary);
+  font: 500 10px/1.4 var(--vi-font-ui);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 38px;
+  padding: 6px 10px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: 400 13px/1.2 var(--vi-font-ui);
+  text-align: start;
+  cursor: pointer;
+}
+.theme-option:hover,
+.theme-option:focus-visible { background: color-mix(in srgb, var(--vi-page-ink) 7%, transparent); }
+.theme-option:focus-visible { outline: 1px solid var(--vi-focus); outline-offset: -1px; }
+.theme-option-label { flex: 1; }
+.theme-check { opacity: 0; color: var(--vi-accent); font-size: 12px; }
+.theme-option[aria-checked="true"] .theme-check { opacity: 1; }
+.theme-swatch {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+  background: #222;
+}
+.theme-swatch[data-swatch="system"] { background: linear-gradient(90deg, #0b0b0b 0 50%, #f3efe4 50% 100%); }
+.theme-swatch[data-swatch="nocturne"] { background: linear-gradient(135deg, #0b0b0b 0 58%, #c9a45c 58% 100%); }
+.theme-swatch[data-swatch="daylight"] { background: linear-gradient(135deg, #f3efe4 0 58%, #a5762f 58% 100%); }
+.theme-swatch[data-swatch="parchment"] { background: linear-gradient(135deg, #efe2c9 0 58%, #a8462d 58% 100%); }
+.theme-swatch[data-swatch="instrument"] { background: linear-gradient(135deg, #08131c 0 58%, #f0a23a 58% 100%); }
+
+/* Make room beside the project tabs for the fixed control. */
+body[data-view] .project-header .project-navigation { right: calc(var(--work-gutter) + 54px); }
+
+@media (max-width: 700px) and (max-aspect-ratio: 3/4), (max-height: 500px) and (min-aspect-ratio: 4/3) and (pointer: coarse) {
+  .theme-control { top: 12px; right: 12px; }
+  .theme-menu { width: 184px; }
+  body[data-view] .project-header .project-navigation { right: calc(var(--work-gutter) + 50px); }
+}
+
+[dir="rtl"] .theme-control { right: auto; left: 16px; }
+[dir="rtl"] .theme-menu { right: auto; left: 0; }
+[dir="rtl"] .theme-menu-title { text-align: right; }
+[dir="rtl"] body[data-view] .project-header .project-navigation { right: auto; left: calc(var(--work-gutter) + 54px); }
+@media (max-width: 700px) and (max-aspect-ratio: 3/4), (max-height: 500px) and (min-aspect-ratio: 4/3) and (pointer: coarse) {
+  [dir="rtl"] .theme-control { left: 12px; }
+  [dir="rtl"] body[data-view] .project-header .project-navigation { left: calc(var(--work-gutter) + 50px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle svg { transition: none; }
+}
